@@ -1,0 +1,138 @@
+.hero {
+  padding: var(--space-20) var(--space-6) var(--space-10);
+  text-align: center;
+  position: relative;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  animation: fadeUp 0.8s ease-out;
+}
+
+/* Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-default);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-8);
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  box-shadow: 0 0 8px var(--accent-primary-glow);
+  animation: pulse-dot 2s ease infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Title */
+.title {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: var(--space-6);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.title.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.line1, .line2 {
+  display: block;
+}
+
+.line1 {
+  color: var(--text-primary);
+}
+
+.line2 {
+  color: var(--text-secondary);
+}
+
+.gradient {
+  color: var(--accent-primary);
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--text-tertiary);
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto var(--space-10);
+  animation: fadeUp 0.8s ease-out 0.2s both;
+}
+
+/* Metrics */
+.metrics {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-6);
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-xl);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-subtle);
+  animation: fadeUp 0.8s ease-out 0.4s both;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.metricValue {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.metricLabel {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.metricDivider {
+  width: 1px;
+  height: 32px;
+  background: var(--border-default);
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: var(--space-16) var(--space-4) var(--space-8);
+  }
+  .metrics {
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-6);
+  }
+  .metricDivider {
+    width: 40px;
+    height: 1px;
+  }
+}
